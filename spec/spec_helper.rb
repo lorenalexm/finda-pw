@@ -1,6 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require 'rack/test'
+require 'capybara/rspec'
 require_relative '../app'
 
 module RSpecMixin
@@ -10,6 +11,8 @@ module RSpecMixin
     FindaPw
   end
 end
+
+Capybara.app = Sinatra::Application
 
 RSpec.configure do |config|
   config.color = true
@@ -25,4 +28,6 @@ RSpec.configure do |config|
   end
 
   config.include RSpecMixin
+  config.include Capybara::DSL, feature: true
+  config.include Capybara::RSpecMatchers, feature: true
 end
