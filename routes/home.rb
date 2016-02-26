@@ -1,7 +1,9 @@
+require 'slim'
+
 module Home
   def self.registered(app)
     app.get '/' do
-      return 'Copyright 2016'
+      slim :home
     end
   end
 end
