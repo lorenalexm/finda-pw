@@ -12,7 +12,7 @@ module RSpecMixin
   end
 end
 
-Capybara.app = Sinatra::Application
+Capybara.app = FindaPw
 
 RSpec.configure do |config|
   config.color = true
