@@ -15,5 +15,10 @@ describe 'Password generator', :type => :feature do
       out = Password.generate :length => 4
       expect(out.to_s.length).to eq 4
     end
+
+    it 'creates password without digits' do
+      out = Password.generate :digits => false
+      expect(out[/\d/].nil?).to be true
+    end
   end
 end
