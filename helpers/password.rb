@@ -10,9 +10,12 @@ class Password
     pool += ('0'..'9').to_a if options[:digits]
     pool += ('A'..'Z').to_a if options[:uppercase]
 
+    return nil if pool.empty?
+
     out = (1..options[:length]).collect do
       pool[rand(pool.size)]
     end
+
     return out.join
   end
 end
