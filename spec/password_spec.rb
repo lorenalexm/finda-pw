@@ -9,4 +9,11 @@ describe 'Password generator', :type => :feature do
       expect(out.to_s.length).to eq 8
     end
   end
+
+  context 'with options' do
+    it 'creates simple password 4 characters in length' do
+      out = Password.generate :length => 4
+      expect(out.to_s.length).to eq 4
+    end
+  end
 end
