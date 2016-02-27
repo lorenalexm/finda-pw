@@ -21,19 +21,25 @@ describe 'Password generator', :type => :feature do
       expect(out[/\d/].nil?).to be true
     end
 
-    it 'creates password containing uppercase letters' do
+    it 'creates password containing uppercase' do
       out = Password.generate :uppercase => true
       expect(out[/[A-Z]/].nil?).to be_falsey
     end
 
-    it 'creates password with uppercase letters and no digits' do
+    it 'creates password with uppercase and no digits' do
       out = Password.generate :uppercase => true, :digits => false
       expect(out[/[A-Z]/].nil?).to be_falsey
       expect(out[/\d/].nil?).to be true
     end
 
-    it 'creates password without lowercase letters' do
+    it 'creates password without lowercase' do
       out = Password.generate :lowercase => false
+      expect(out[/[a-z]/].nil?).to be true
+    end
+
+    it 'creates password with uppercase and no lowercase' do
+      out = Password.generate :uppercase => true, :lowercase => false
+      expect(out[/[A-Z]/].nil?).to be_falsey
       expect(out[/[a-z]/].nil?).to be true
     end
   end
