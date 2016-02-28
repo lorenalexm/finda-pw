@@ -50,6 +50,11 @@ describe 'Password generator', :type => :feature do
       expect(out[/\d/].nil?).to be true
     end
 
+    it 'creates password containing symbols' do
+      out = Password.generate :symbols => true
+      expect(out[/\W/].nil?).to be_falsey
+    end
+
     it 'returns nil if unable to generate' do
       out = Password.generate :uppercase => false, :lowercase => false, :digits => false
       expect(out.nil?).to be true
