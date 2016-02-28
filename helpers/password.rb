@@ -16,7 +16,6 @@ class Password
     return nil if pool.empty?
 
     out = (1..options[:length]).collect do
-      #pool[rand(pool.size)]
       pool.sample
     end
 
