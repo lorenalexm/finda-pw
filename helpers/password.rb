@@ -1,5 +1,5 @@
 class Password
-  def self.generate options = Hash.new
+  def self.generate(options = Hash.new)
     options[:length] ||= 8
     options[:digits] = true if options[:digits].nil?
     options[:lowercase] = true if options[:lowercase].nil?
@@ -15,9 +15,7 @@ class Password
 
     return nil if pool.empty?
 
-    out = (1..options[:length]).collect do
-      pool.sample
-    end
+    out = (1..options[:length]).collect { pool.sample }
 
     return out.join
   end
