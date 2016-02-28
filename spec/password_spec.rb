@@ -59,5 +59,10 @@ describe 'Password generator', :type => :feature do
       out = Password.generate :uppercase => false, :lowercase => false, :digits => false
       expect(out.nil?).to be true
     end
+
+    it 'generates an array of 10 passwords' do
+      out = Password.generate :count => 10
+      expect(out.length).to eq 10
+    end
   end
 end

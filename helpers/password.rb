@@ -5,6 +5,7 @@ class Password
     options[:lowercase] = true if options[:lowercase].nil?
     options[:uppercase] = false if options[:uppercase].nil?
     options[:symbols] = false if options[:symbols].nil?
+    options[:count] ||= 1
 
     pool = Array.new
     pool += ('a'..'z').to_a if options[:lowercase]
@@ -15,8 +16,16 @@ class Password
 
     return nil if pool.empty?
 
-    out = (1..options[:length]).collect { pool.sample }
-
-    return out.join
+    if options[:count] > 1
+      out = Array.new
+      options[:count].times do |pass|
+        pass = (1..options[:length]).collect { pool.sample }
+        out.push pass.join
+      end
+      return out
+    else
+      out = (1..options[:length]).collect { pool.sample }
+      return out.join
+    end
   end
 end
