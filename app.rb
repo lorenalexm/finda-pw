@@ -15,4 +15,5 @@ class FindaPw < Sinatra::Base
   end
 
   register Home
+  register Api
 end
