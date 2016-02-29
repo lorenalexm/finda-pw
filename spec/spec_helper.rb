@@ -2,6 +2,8 @@ ENV['RACK_ENV'] = 'test'
 
 require 'rack/test'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
+require 'tilt/coffee'
 require_relative '../app'
 
 module RSpecMixin
@@ -13,6 +15,8 @@ module RSpecMixin
 end
 
 Capybara.app = FindaPw
+Capybara.default_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
   config.color = true
