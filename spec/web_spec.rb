@@ -11,10 +11,8 @@ describe 'Web facing', :type => :feature do
 
     it 'should request and display a generated password' do
       visit '/'
-      click_button 'Generate Password'
-      within_table 'passwords' do
-        expect(page).to have_content 'password'
-      end
+      click_button 'Generate'
+      expect(page).to have_content 'password'
     end
   end
 
