@@ -9,4 +9,5 @@ group :test do
   gem 'rack-test', '~> 0.6.3'
   gem 'rspec', '~> 3.4.0'
   gem 'capybara', '~> 2.6.2'
+  gem 'poltergeist', '~> 1.9.0'
 end
