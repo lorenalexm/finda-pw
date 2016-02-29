@@ -1,1 +1,25 @@
 h3 Copyright 2016
+
+button id="gen_button" Generate Passwords
+
+table id="passwords"
+
+p id="copyright_slug"
+
+coffee:
+  (($) ->
+    $.ajax
+      url: '/api/version'
+      type: 'get'
+      dataType: 'json'
+      error: (jqXhr, status, error) ->
+        console.log error
+      success: (data) ->
+        markup = ''
+        $.each data, (index, value) ->
+          markup += 'The Finda.pw application ' + index + ' ' + value + ' was created with love by Alex Loren'
+        $('#copyright_slug').append markup
+  ) jQuery
+
+
+
