@@ -1,0 +1,55 @@
+body {
+    background: #46433A;
+}
+
+p {
+    color: #DED4B9;
+}
+
+tr:nth-child(odd) {
+    background: #38362F;
+}
+
+tr:nth-child(even) {
+    background: #615E54;
+}
+
+td {
+    color: #DED4B9;
+}
+
+th {
+    padding: 10px;
+    font-weight: bold;
+    color: #DED4B9;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    color: inherit;
+}
+
+.weak_password {
+    font-style: italic;
+    font-weight: bold;
+    color: #CE534D;
+}
+
+.strong_password {
+    font-weight: bold;
+    color: #C0D23E;
+}
+
+.title {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 6em;
+    color: #64B6B1;
+    margin-bottom: 0px;
+}
+
+.footer {
+    font-size: 0.75em;
+    color: #CE534D;
+}
