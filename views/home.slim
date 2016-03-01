@@ -15,10 +15,8 @@ coffee:
       error: (jqXhr, status, error) ->
         console.log error
       success: (data) ->
-        markup = ''
-        $.each data, (index, value) ->
-          markup += 'The Finda.pw application ' + index + ' ' + value + ' was created with love by Alex Loren'
-        $('#copyright_slug').append markup
+        markup = 'The Finda.pw application version ' + data["version"] + ' was created with love by Alex Loren'
+        $('#copyright_slug').prepend markup
   ) jQuery
 
 coffee:
@@ -31,9 +29,8 @@ coffee:
         error: (jqXhr, status, error) ->
           console.log error
         success: (data) ->
-          $('#passwords').empty
-          markup = ''
-          $.each data, (index, value) ->
-            markup += '<tr><td><p>' + index + '</p></td><td><p>' + value + '</p></td></tr>'
-          $('#passwords').append markup
+          markup = '<tr>'
+          markup += '<td>' + data["password"] + '</td>'
+          markup += '</tr>'
+          $(markup).prependTo('#passwords')
   ) jQuery
