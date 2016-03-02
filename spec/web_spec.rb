@@ -4,9 +4,9 @@ require_relative 'spec_helper'
 
 describe 'Web facing', :type => :feature do
   context 'application' do
-    it 'should display copyright on homepage' do
+    it 'should display footer on homepage' do
       visit '/'
-      expect(page).to have_content 'Copyright 2016'
+      expect(page).to have_content 'Alex Loren'
     end
 
     it 'should request and display a generated password' do
