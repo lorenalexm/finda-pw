@@ -1,4 +1,5 @@
 require 'json'
+require 'strong_password'
 require_relative '../helpers/password'
 
 module Api
@@ -8,7 +9,13 @@ module Api
     end
 
     app.get '/api/generate' do
-      {:password => Password.generate}.to_json
+      password = Password.generate
+      entropy = StrongPassword::StrengthChecker.new(password)
+      out = Hash.new
+      out[:password] = password
+      out[:entropy] = entropy.calculate_entropy
+      out[:weak] = entropy.is_weak?
+      out.to_json
     end
   end
 end
