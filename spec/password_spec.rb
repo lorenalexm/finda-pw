@@ -51,8 +51,8 @@ describe 'Password generator', :type => :feature do
     end
 
     it 'contains no like letters or digits' do
-      out = Password.generate :uppercase => true, :lowercase => true, :digits => true, :alike => false
-      expect(out).not_to include('i', 'I', 'l', 'L', '1', '!', 'v', 'V', 'w', 'W', 'u', 'U')      
+      out = Password.generate :uppercase => true, :lowercase => true, :digits => true, :symbols => true, :alike => false
+      expect(out).not_to include('B', '8', 'G', '6', 'I', '1', 'l', '0', 'O', 'Q', 'D', 'S', '5', 'Z', '2','v', 'V', 'w', 'W', 'u', 'U')
     end
 
     it 'creates password containing symbols' do
