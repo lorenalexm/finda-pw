@@ -25,6 +25,11 @@ a:hover {
   color: #83D0B0;
 }
 
+input[type="radio"] {
+  margin-left: 0.5em;
+  margin-right: 0.5em
+}
+
 .weak_password {
     font-style: italic;
     font-weight: bold;
