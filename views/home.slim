@@ -28,7 +28,48 @@ div class="container"
           button class="buffer button-primary" id="generate_simple" Generate
           button class="buffer button-primary" id="more_options" More Options
       div id="advanced"
-        button class="button-primary" id="less_options" Less Options
+        form id="generation_options"
+          div class="row"
+            div class="six columns"
+              label for="count" Passwords to generate
+              select class="u-full-width" id="count"
+                -1.upto(10) do |i|
+                  option value="#{i}" #{i}
+
+            div class="six columns just_right"
+              label for="length" Password length
+              input type="number" min="1" max="32" id="length" placeholder="8"
+
+          div class="row center_h"
+            div class="four columns"
+              label for="digits" Digits?
+              input type="radio" value="1" name="digits" checked="checked" Yes
+              input type="radio" value="0" name="digits" No
+
+            div class="four columns"
+              label for="lowercase" Lowercase?
+              input type="radio" value="1" name="lowercase" checked="checked" Yes
+              input type="radio" value="0" name="lowercase" No
+
+            div class="four columns"
+              label for="uppercase" Uppercase?
+              input type="radio" value="1" name="uppercase" Yes
+              input type="radio" value="0" name="uppercase" checked="checked" No
+
+          div class="row center_h"
+            div class="six columns"
+              label for="symbols" Symbols?
+              input type="radio" value="1" name="symbols" Yes
+              input type="radio" value="0" name="symbols" checked="checked" No
+
+            div class="six columns"
+              label for="alike" Remove alike?
+              input type="radio" value="1" name="alike" Yes
+              input type="radio" value="0" name="alike" checked="checked" No
+
+        span class="center_h"
+          button class="buffer button-primary" id="generate_advanced" Generate
+          button class="button-primary" id="less_options" Less Options
     div class="two columns"
       p
         |
