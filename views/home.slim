@@ -56,6 +56,11 @@ div class="container"
 
 coffee:
   (($) ->
+    $('#advanced').toggle()
+  ) jQuery
+
+coffee:
+  (($) ->
     $.ajax
       url: '/api/version'
       type: 'get'
