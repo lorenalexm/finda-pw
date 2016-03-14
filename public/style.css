@@ -64,10 +64,6 @@ a:hover {
   font-weight: bold;
 }
 
-.hide {
-  visibility: hidden;
-}
-
 .buffer {
   margin-left: 0.5em;
   margin-right: 0.5em;
