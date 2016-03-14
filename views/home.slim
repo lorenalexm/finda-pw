@@ -21,7 +21,7 @@ coffee:
       error: (jqXhr, status, error) ->
         console.log error
       success: (data) ->
-        markup = 'The Finda.pw application version ' + data["version"] + ' was created with love by Alex Loren'
+        markup = 'The Finda.pw application version ' + data["version"] + ' was created with <span class="heart">♥</span> by Alex Loren'
         $('#copyright_slug').prepend markup
   ) jQuery
 
