@@ -97,6 +97,11 @@ div class="container"
 
 coffee:
   $ ->
+    $('#generation_options').submit (e)->
+      e.preventDefault
+      return false
+
+  $ ->
     $('#advanced').toggle()
 
 coffee:
