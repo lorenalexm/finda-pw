@@ -34,7 +34,6 @@ class Password
       return out
     else
       out = (1..options[:length]).collect { pool.sample }
-      puts out.join
       return out.join
     end
   end
