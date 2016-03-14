@@ -37,6 +37,11 @@ coffee:
         success: (data) ->
           markup = '<tr>'
           markup += '<td>' + data["password"] + '</td>'
+          if data["weak"] == true
+            markup += '<td class="weak_password">WEAK</td>'
+          else
+            markup += '<td class="strong_password">STRONG</td>'
+          markup += '<td>' + data["entropy"] + '</td>'
           markup += '</tr>'
           $(markup).prependTo('#passwords')
   ) jQuery
