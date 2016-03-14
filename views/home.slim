@@ -55,12 +55,11 @@ div class="container"
         | <br>Colour pallet designed by <a href="http://www.colourlovers.com/lover/SueaPeek">SueaPeek</a> and shared under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC-BY-NC-SA</a>
 
 coffee:
-  (($) ->
+  $ ->
     $('#advanced').toggle()
-  ) jQuery
 
 coffee:
-  (($) ->
+  $ ->
     $.ajax
       url: '/api/version'
       type: 'get'
@@ -70,10 +69,9 @@ coffee:
       success: (data) ->
         markup = 'The Finda.pw application version ' + data["version"] + ' was created with <span class="heart">♥</span> by Alex Loren'
         $('#copyright_slug').prepend markup
-  ) jQuery
 
 coffee:
-  (($) ->
+  $ ->
     $('#generate_simple').click ->
       $.ajax
         url: '/api/generate'
@@ -91,18 +89,15 @@ coffee:
           markup += '<td class="just_right">' + data["entropy"] + '</td>'
           markup += '</tr>'
           $(markup).prependTo('#passwords')
-  ) jQuery
 
 coffee:
-  (($) ->
+  $ ->
     $('#more_options').click ->
       $('#simple').toggle()
       $('#advanced').toggle()
-  ) jQuery
 
 coffee:
-  (($) ->
-  $('#less_options').click ->
-    $('#simple').toggle()
-    $('#advanced').toggle()
-  ) jQuery
+  $ ->
+    $('#less_options').click ->
+      $('#simple').toggle()
+      $('#advanced').toggle()
