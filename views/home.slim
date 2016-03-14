@@ -39,8 +39,8 @@ div class="container"
         thead
           tr
             th password
-            th strength
-            th entropy
+            th class="just_right" strength
+            th class="just_right" entropy
         tbody id="passwords"
     div class="two columns"
       p
@@ -77,10 +77,10 @@ coffee:
           markup = '<tr>'
           markup += '<td>' + data["password"] + '</td>'
           if data["weak"] == true
-            markup += '<td class="weak_password">WEAK</td>'
+            markup += '<td class="just_right weak_password">WEAK</td>'
           else
-            markup += '<td class="strong_password">STRONG</td>'
-          markup += '<td>' + data["entropy"] + '</td>'
+            markup += '<td class="just_right strong_password">STRONG</td>'
+          markup += '<td class="just_right">' + data["entropy"] + '</td>'
           markup += '</tr>'
           $(markup).prependTo('#passwords')
   ) jQuery
