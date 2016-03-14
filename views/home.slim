@@ -1,16 +1,53 @@
-h1 class="title" Finda.pw
+div class="container"
 
-button id="gen_button" Generate
+  div class="row"
+    div class="one column"
+      p
+        |
 
-table id="passwords"
-  thead
-    tr
-      th password
-      th strength
-      th entropy
+  div class="row"
+    div class="six columns"
+      h1 class="title" Finda.pw
+    div class="six columns sidebar"
+      p class="just-right"
+        | <br>Finda.pw is an effort to create a simple password generator using Ruby, Sinatra, Slim, CoffeeScript, RSpec and a
+        |  few other buzz-wordy Ruby Gems of note.
 
-p id="copyright_slug" class="footer"
-  | <br>Colour pallet designed by <a href="http://www.colourlovers.com/lover/tekiegirl/">tekiegirl</a> and shared under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC-BY-NC-SA</a>
+  div class="row"
+    div class="one column"
+      p
+        |
+
+  div class="row"
+    div class="two columns"
+      p
+        |
+    div class="eight columns"
+      button id="gen_button" Generate
+    div class="two columns"
+      p
+        |
+
+  div class="row"
+    div class="two columns"
+      p
+        |
+    div class="eight columns"
+      table class="u-full-width"
+        thead
+          tr
+            th password
+            th strength
+            th entropy
+        tbody id="passwords"
+    div class="two columns"
+      p
+        |
+
+  div class="row"
+    div class="twelve columns"
+      p id="copyright_slug" class="footer"
+        | <br>Colour pallet designed by <a href="http://www.colourlovers.com/lover/SueaPeek">SueaPeek</a> and shared under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC-BY-NC-SA</a>
 
 coffee:
   (($) ->
