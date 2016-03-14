@@ -49,6 +49,9 @@ a:hover {
 
 .just_right {
   text-align: right;
+}
+
+.pad_right {
   padding-right: 2em;
 }
 
