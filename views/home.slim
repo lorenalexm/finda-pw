@@ -104,7 +104,6 @@ coffee:
   $ ->
     $('#advanced').toggle()
 
-coffee:
   $ ->
     $.ajax
       url: '/api/version'
@@ -116,7 +115,6 @@ coffee:
         markup = 'The Finda.pw application version ' + data["version"] + ' was created with <span class="heart">♥</span> by Alex Loren'
         $('#copyright_slug').prepend markup
 
-coffee:
   $ ->
     $('#generate_simple').click ->
       $.ajax
@@ -136,13 +134,11 @@ coffee:
           markup += '</tr>'
           $(markup).prependTo('#passwords')
 
-coffee:
   $ ->
     $('#more_options').click ->
       $('#simple').toggle()
       $('#advanced').toggle()
 
-coffee:
   $ ->
     $('#less_options').click ->
       $('#simple').toggle()
