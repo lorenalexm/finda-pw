@@ -14,6 +14,17 @@ describe 'Web facing', :type => :feature do
       click_button 'Generate'
       expect(page).to have_content ('WEAK' || 'STRONG')
     end
+
+    it 'should not have more options by default' do
+      visit '/'
+      expect(page).not_to have_content 'LESS OPTIONS'
+    end
+
+    it 'should display more options' do
+      visit '/'
+      click_button 'More Options'
+      expect(page).to have_content 'LESS OPTIONS'
+    end
   end
 
   context 'api' do
