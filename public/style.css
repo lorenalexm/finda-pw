@@ -1,27 +1,17 @@
 body {
-    background: #46433A;
-}
-
-p {
-    color: #DED4B9;
+    background: #FEFEFE;
 }
 
 tr:nth-child(odd) {
-    background: #38362F;
+    background: #FEFEFE;
 }
 
 tr:nth-child(even) {
-    background: #615E54;
+    background: #FDFDFD;
 }
 
 td {
-    color: #DED4B9;
-}
-
-th {
-    padding: 10px;
-    font-weight: bold;
-    color: #DED4B9;
+    color: #222222;
 }
 
 a {
@@ -29,6 +19,10 @@ a {
     font-weight: bold;
     font-style: italic;
     color: inherit;
+}
+
+a:hover {
+  color: #83D0B0;
 }
 
 .weak_password {
@@ -39,17 +33,34 @@ a {
 
 .strong_password {
     font-weight: bold;
-    color: #C0D23E;
+    color: #D6F068;
 }
 
 .title {
-    font-family: 'Cedarville Cursive', cursive;
     font-size: 6em;
-    color: #64B6B1;
-    margin-bottom: 0px;
+    color: #778DA5;
+}
+
+.sidebar {
+  border-right-color: #83D0B0;
+  border-right-style: solid;
+  border-right-width: thick;
+}
+
+.just-right {
+  text-align: right;
+  padding-right: 2em;
 }
 
 .footer {
-    font-size: 0.75em;
-    color: #CE534D;
+    font-size: 0.7em;
+}
+
+.heart {
+  color: #CE534D;
+  font-weight: bold;
+}
+
+.hide {
+  visibility: hidden;
 }
