@@ -92,3 +92,17 @@ coffee:
           markup += '</tr>'
           $(markup).prependTo('#passwords')
   ) jQuery
+
+coffee:
+  (($) ->
+    $('#more_options').click ->
+      $('#simple').toggle()
+      $('#advanced').toggle()
+  ) jQuery
+
+coffee:
+  (($) ->
+  $('#less_options').click ->
+    $('#simple').toggle()
+    $('#advanced').toggle()
+  ) jQuery
