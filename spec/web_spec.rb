@@ -12,7 +12,7 @@ describe 'Web facing', :type => :feature do
     it 'should request and display a generated password' do
       visit '/'
       click_button 'Generate'
-      expect(page).to have_content ('WEAK' || 'STRONG')
+      expect(page).to have_selector('table tbody tr', :count => 1)
     end
 
     it 'should not have more options by default' do
