@@ -135,6 +135,14 @@ coffee:
           $(markup).prependTo('#passwords')
 
   $ ->
+    $('#generate_advanced').click ->
+      raw = $('#generation_options').serializeArray()
+      options = {}
+      options[item.name] = item.value for item in raw
+
+      console.log options
+
+  $ ->
     $('#more_options').click ->
       $('#simple').toggle()
       $('#advanced').toggle()
