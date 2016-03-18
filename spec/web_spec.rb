@@ -25,6 +25,14 @@ describe 'Web facing', :type => :feature do
       click_button 'More Options'
       expect(page).to have_content 'LESS OPTIONS'
     end
+
+    it 'should generate 5 passwords' do
+      visit '/'
+      click_button 'More Options'
+      select '5', :from => 'count'
+      click_button 'Generate'
+      expect(page).to have_selector('table tbody tr', :count => 5)
+    end
   end
 
   context 'api' do
