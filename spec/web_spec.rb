@@ -2,8 +2,8 @@ require 'rspec'
 require 'json'
 require_relative 'spec_helper'
 
-describe 'Web facing', :type => :feature do
-  context 'application' do
+describe 'Web facing' do
+  describe 'application', :type => :feature do
     it 'should display footer on homepage' do
       visit '/'
       expect(page).to have_content 'Alex Loren'
@@ -35,10 +35,15 @@ describe 'Web facing', :type => :feature do
     end
   end
 
-  context 'api' do
+  describe 'api', :type => :request do
     it 'should return the version' do
-      visit '/api/version'
-      expect(page).to have_content 'version'
+      get '/api/version'
+      expect(last_response.body).to include 'version'
+    end
+
+    it 'sould return a single password as json' do
+      get '/api/generate'
+      expect(last_response.body).to include 'password'
     end
   end
 end
