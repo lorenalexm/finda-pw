@@ -41,31 +41,33 @@ div class="container"
               input type="number" min="1" max="32" name="length" value="8"
 
           div class="row center_h"
-            div class="four columns"
-              label for="digits" Digits?
-              input type="radio" value="1" name="digits" checked="checked" Yes
-              input type="radio" value="0" name="digits" No
+            div class="one column"
+              p
+                |
 
-            div class="four columns"
+            div class="two columns"
               label for="lowercase" Lowercase?
-              input type="radio" value="1" name="lowercase" checked="checked" Yes
-              input type="radio" value="0" name="lowercase" No
+              input type="checkbox" value="1" name="lowercase" checked="checked"
 
-            div class="four columns"
+            div class="two columns"
               label for="uppercase" Uppercase?
-              input type="radio" value="1" name="uppercase" Yes
-              input type="radio" value="0" name="uppercase" checked="checked" No
+              input type="checkbox" value="1" name="uppercase"
 
-          div class="row center_h"
-            div class="six columns"
+            div class="two columns"
+              label for="digits" Digits?
+              input type="checkbox" value="1" name="digits" checked="checked"
+
+            div class="two columns"
               label for="symbols" Symbols?
-              input type="radio" value="1" name="symbols" Yes
-              input type="radio" value="0" name="symbols" checked="checked" No
+              input type="checkbox" value="1" name="symbols"
 
-            div class="six columns"
-              label for="alike" Remove alike?
-              input type="radio" value="1" name="alike" Yes
-              input type="radio" value="0" name="alike" checked="checked" No
+            div class="two columns"
+              label for="alike" Similar?
+              input type="checkbox" value="1" name="alike"
+
+            div class="one column"
+              p
+                |
 
         span class="center_h"
           button class="buffer button-primary" id="generate_advanced" Generate
