@@ -45,5 +45,10 @@ describe 'Web facing' do
       get '/api/generate'
       expect(last_response.body).to include 'password'
     end
+
+    it 'should return 5 passwords as json' do
+      post '/api/generate', { :count => 5 }.to_json
+      expect(JSON.parse(last_response.body).length).to eq 5
+    end
   end
 end

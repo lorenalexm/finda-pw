@@ -17,5 +17,20 @@ module Api
       out[:weak] = entropy.is_weak?
       out.to_json
     end
+
+    app.post '/api/generate' do
+      options = JSON.parse(request.body.read, :symbolize_names => true)
+      passwords = Password.generate options
+      out = Array.new
+      passwords.each do |p|
+        entropy = StrongPassword::StrengthChecker.new(p)
+        item = Hash.new
+        item[:password] = p
+        item[:entropy] = entropy.calculate_entropy
+        item[:weak] = entropy.is_weak?
+        out.push item
+      end
+      out.to_json
+    end
   end
 end
