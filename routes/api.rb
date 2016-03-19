@@ -4,6 +4,10 @@ require_relative '../helpers/password'
 
 module Api
   def self.registered(app)
+    app.get '/api/status' do
+      return 'UP'
+    end
+
     app.get '/api/version' do
       {:version => '0.1.0'}.to_json
     end
