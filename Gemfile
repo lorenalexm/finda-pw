@@ -6,6 +6,10 @@ gem 'slim', '~> 3.0.6'
 gem 'coffee-script', '~> 2.4.1'
 gem 'strong_password', '~> 0.0.5'
 
+group :production do
+  gem 'puma', '~> 3.1.1'
+end
+
 group :test do
   gem 'rack-test', '~> 0.6.3'
   gem 'rspec', '~> 3.4.0'
