@@ -5,19 +5,19 @@ require_relative '../helpers/password'
 describe 'Password generator', :type => :feature do
   context 'with no options' do
     it 'creates simple password 8 characters in length' do
-      out = Password.generate
+      out = Password.generate :lowercase => true
       expect(out.to_s.length).to eq 8
     end
   end
 
   context 'with options' do
     it 'creates simple password 4 characters in length' do
-      out = Password.generate :length => 4
+      out = Password.generate :lowercase => true, :length => 4
       expect(out.to_s.length).to eq 4
     end
 
     it 'creates password without digits' do
-      out = Password.generate :digits => false
+      out = Password.generate :lowercase => true, :digits => false
       expect(out[/\d/].nil?).to be true
     end
 
@@ -33,7 +33,7 @@ describe 'Password generator', :type => :feature do
     end
 
     it 'creates password without lowercase' do
-      out = Password.generate :lowercase => false
+      out = Password.generate :lowercase => false, :uppercase => true
       expect(out[/[a-z]/].nil?).to be true
     end
 
@@ -66,7 +66,7 @@ describe 'Password generator', :type => :feature do
     end
 
     it 'generates an array of 10 passwords' do
-      out = Password.generate :count => 10
+      out = Password.generate :lowercase => true, :count => 10
       expect(out.length).to eq 10
     end
   end

@@ -1,8 +1,8 @@
 class Password
   def self.generate(options = Hash.new)
     options[:length] ||= 8
-    options[:digits] = true if options[:digits].nil?
-    options[:lowercase] = true if options[:lowercase].nil?
+    options[:digits] = false if options[:digits].nil?
+    options[:lowercase] = false if options[:lowercase].nil?
     options[:uppercase] = false if options[:uppercase].nil?
     options[:symbols] = false if options[:symbols].nil?
     options[:alike] = true if options[:alike].nil?

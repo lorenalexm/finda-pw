@@ -9,7 +9,7 @@ module Api
     end
 
     app.get '/api/generate' do
-      password = Password.generate
+      password = Password.generate(:lowercase => true, :digits => true)
       entropy = StrongPassword::StrengthChecker.new(password)
       out = Hash.new
       out[:password] = password
