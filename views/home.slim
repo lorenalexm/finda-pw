@@ -140,9 +140,48 @@ coffee:
     $('#generate_advanced').click ->
       raw = $('#generation_options').serializeArray()
       options = {}
-      options[item.name] = item.value for item in raw
+      checked = false
+      $.each raw, (i,v) ->
+        options[v.name] = v.value
 
-      console.log options
+      $('input[type="checkbox"]').each ->
+        if $(this).attr("name") != "alike"
+          if $(this).is ":checked"
+            checked = true
+
+      if checked == false
+        return
+
+      $.ajax
+        url: '/api/generate'
+        type: 'post'
+        contentType: 'application/json'
+        dataType: 'json'
+        data: JSON.stringify(options)
+        error: (jqXhr, status, error) ->
+          console.log error
+        success: (data) ->
+          markup = ""
+          if data instanceof Array
+            for i in data
+              markup += '<tr>'
+              markup += '<td>' + i["password"] + '</td>'
+              if i["weak"] == true
+                markup += '<td class="just_right weak_password">WEAK</td>'
+              else
+                markup += '<td class="just_right strong_password">STRONG</td>'
+              markup += '<td class="just_right">' + i["entropy"] + '</td>'
+              markup += '</tr>'
+          else
+            markup = '<tr>'
+            markup += '<td>' + data["password"] + '</td>'
+            if data["weak"] == true
+              markup += '<td class="just_right weak_password">WEAK</td>'
+            else
+              markup += '<td class="just_right strong_password">STRONG</td>'
+            markup += '<td class="just_right">' + data["entropy"] + '</td>'
+            markup += '</tr>'
+          $(markup).prependTo('#passwords')
 
   $ ->
     $('#more_options').click ->
