@@ -25,15 +25,15 @@ class Password
       end
     end
 
-    if options[:count] > 1
+    if options[:count].to_i > 1
       out = Array.new
-      options[:count].times do |pass|
-        pass = (1..options[:length]).collect { pool.sample }
+      options[:count].to_i.times do |pass|
+        pass = (1..options[:length].to_i).collect { pool.sample }
         out.push pass.join
       end
       return out
     else
-      out = (1..options[:length]).collect { pool.sample }
+      out = (1..options[:length].to_i).collect { pool.sample }
       return out.join
     end
   end
